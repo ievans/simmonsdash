@@ -27,14 +27,14 @@ $.ajax({
 $.ajax({
  url: "/calendar",
  success: function(html){
-      $("#rightSide").html(html);
+      $("#leftBottom").html(html);
  }
 });
 
 $.ajax({
  url: "/events",
  success: function(html){
-      $("#footer").html(html);
+      $("#leftBottom").html(html);
  }
 });
 
@@ -45,15 +45,13 @@ $.ajax({
 </head>
 
 <body>
-<h1>simmons is awesome</h1>
-
-<hr>
 <div class="mainBody">
 	<div class="leftSide">
-		<div id="leftTop" class="leftTop">
+		<div class="module" id="leftTop" class="leftTop">
 		  loading...
 		</div>
-		<div id="leftBottom" class="leftBottom">
+		<div class="module" id="leftBottom" class="leftBottom">
+		
 		  loading...
 		</div>
 	</div>
