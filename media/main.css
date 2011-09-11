@@ -10,6 +10,11 @@ body {
     -webkit-text-stroke: 1px transparent; 
 }
 
+.mainBody {
+    height: 100%;
+    min-height: 95%;
+}
+
 .bottomTicker {
     background-color: black;
     padding: 1%;
@@ -23,13 +28,13 @@ body {
 
 .leftSide {
     width: 60%;
-    height: 95%;
+    height: 100%;
     float: left;
 }
 
 .rightSide {
     width: 40%;
-    height: 95%;
+    height: 100%;
     float:right;
     background-color: white;
 }
@@ -44,11 +49,10 @@ body {
 }
 
 #leftTop {
-    min-height: 40%;
+    min-height: 50%;
 }
 
 #leftBottom {
     min-height: 40%;
-    margin: auto auto;
 }
 
