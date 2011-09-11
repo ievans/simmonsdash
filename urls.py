@@ -10,6 +10,8 @@ patterns('',
          url(r'^calendar/', 'simmonsdash.views.calendar', name='calendar'),
          url(r'^events/', 'simmonsdash.views.events', name='events'),
          url(r'^nextbus/', 'simmonsdash.nextbus.nextbus', name='nextbus'),
+         url(r'^weather/', 'simmonsdash.views.weather', name='weather'),
+         
     # url(r'^simmonsdash/', include('simmonsdash.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
