@@ -24,6 +24,20 @@ $.ajax({
  }
 });
 
+$.ajax({
+ url: "/calendar",
+ success: function(html){
+      $("#rightSide").html(html);
+ }
+});
+
+$.ajax({
+ url: "/events",
+ success: function(html){
+      $("#footer").html(html);
+ }
+});
+
 
 });
 </script>
@@ -43,10 +57,10 @@ $.ajax({
 		  loading...
 		</div>
 	</div>
-	<div class="rightSide">rightSide</div>
+	<div id="rightSide" class="rightSide">rightSide</div>
 </div>
 
-<div class="bottomTicker">NEWS!</div>
+<div id="footer" class="bottomTicker">NEWS!</div>
 
-</body> </html>
+</body></html>
 
