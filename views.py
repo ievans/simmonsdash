@@ -25,7 +25,6 @@ def events(request):
                                'ampm' : eventDateTime.strftime('%p'),
                                'description' : event['description'] } ])
 
-    print smallevents
     return render_to_response('events.html', { 'events' : smallevents })
 
 def calendar(req):
