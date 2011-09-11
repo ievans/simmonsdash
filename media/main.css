@@ -1,0 +1,17 @@
+.mainBody {
+	width: 1920px;
+	height: 1080px;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.bottomTicker {
+
+	background: yellow;
+	color: red; 
+
+}
+
+.leftSide {
+	background-color: blue;
+}
