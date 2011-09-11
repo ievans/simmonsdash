@@ -1,6 +1,7 @@
 body {
+    margin: 0 auto;
     font-family: verdana, arial, helvetica, sans-serif;
-    font-size: 18px;
+    font-size:120%;
     background-color: #0a0a0a;
     color: #fff;
     vertical-align: middle;
@@ -9,53 +10,45 @@ body {
     -webkit-text-stroke: 1px transparent; 
 }
 
-#board {
-    margin: 0 auto;
-}
-
-.mini {
-    background-color: #1c2020;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#454f4f), to(#111));	  
-}
-
 .bottomTicker {
     background-color: black;
-    padding: 15px;
+    padding: 1%;
     color: white;
     width: 100%;
+    height: 5%;
     bottom: 0px;
     clear: both;
     position: fixed; bottom: 0px;
 }
 
 .leftSide {
-    float: left;
-    margin: 10px;
     width: 60%;
+    height: 95%;
     float: left;
+}
+
+.rightSide {
+    width: 40%;
+    height: 95%;
+    float:right;
+    background-color: white;
 }
 
 .module {
     padding: 10px;
+    margin: 1%;
     background-color: #1c2020;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#454f4f), to(#111));
 }
 
-leftTop {
-    height: 50%;
+#leftTop {
+    min-height: 40%;
 }
 
-.leftBottom {
-
+#leftBottom {
+    min-height: 40%;
+    margin: auto auto;
 }
 
-.rightSide {
-    float: right;
-    margin: 10px;
-    width: 30%;
-    
-}
