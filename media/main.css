@@ -1,17 +1,27 @@
-.mainBody {
-	width: 1920px;
-	height: 1080px;
-	margin-left: auto;
+body {
+    max-width: 1920px;
+    max-height: 1080px;
+    margin-left: auto;
     margin-right: auto;
+    height: 100%;
+    width: 100%;
 }
 
 .bottomTicker {
-
-	background: yellow;
-	color: red; 
-
+    background-color: black;
+    padding: 15px;
+    color: white;
+    width: 100%;
+    bottom: 0px;
+    clear: both;
 }
 
 .leftSide {
-	background-color: blue;
+    background-color: blue;
+    width: 60%;
+    float: left;
+}
+
+.rightSide {
+    
 }

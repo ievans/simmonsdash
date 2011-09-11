@@ -4,24 +4,49 @@
 <!-- <link rel="stylesheet" href="../media/bootstrap-1.2.0.css"> -->
 <link rel="stylesheet" href="../media/main.css">
 
-
 <title></title>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+$.ajax({
+ url: "/nextbus",
+ success: function(html){
+      $("#leftTop").html(html);
+ }
+});
+
+$.ajax({
+ url: "/weather",
+ success: function(html){
+      $("#leftBottom").html(html);
+ }
+});
+
+
+});
+</script>
+
 </head>
 
 <body>
 <h1>simmons is awesome</h1>
 
 <hr>
-<span class="mainBody">
+<div class="mainBody">
 	<div class="leftSide">
-		<div class="leftTop">leftTop</div>
-		<div class="leftBottom">leftBottom</div>
+		<div id="leftTop" class="leftTop">
+		  loading...
+		</div>
+		<div id="leftBottom" class="leftBottom">
+		  loading...
+		</div>
 	</div>
 	<div class="rightSide">rightSide</div>
+</div>
 
-</span>
-
-<span class="bottomTicker">NEWS!</span>
+<div class="bottomTicker">NEWS!</div>
 
 </body> </html>
 
