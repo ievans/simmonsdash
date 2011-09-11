@@ -4,9 +4,14 @@ from django.conf.urls.defaults import patterns, include, url
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
-    # Examples:
-     url(r'^$', 'simmonsdash.views.home', name='home'),
+urlpatterns = \
+patterns('',
+         url(r'^$', 'simmonsdash.views.home', name='home'),
+         url(r'^calendar/', 'simmonsdash.views.calendar', name='calendar'),
+         url(r'^events/', 'simmonsdash.views.events', name='events'),
+         url(r'^nextbus/', 'simmonsdash.nextbus.nextbus', name='nextbus'),
+         url(r'^weather/', 'simmonsdash.views.weather', name='weather'),
+         
     # url(r'^simmonsdash/', include('simmonsdash.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
