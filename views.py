@@ -40,7 +40,6 @@ def calendar(req):
      'dayofweek' : now.strftime("%A")
      }
     jsonout = json.dumps(calender, sort_keys=True, indent=4)
-    print jsonout
     return HttpResponse(jsonout, mimetype="application/json")
 
 def weather(req):

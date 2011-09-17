@@ -3,8 +3,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>simmonsdash</title>
     <link href="media/statusboard/statusboard.css" rel="stylesheet" type="text/css" />
+    <link href="media/li-scroller.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+
+
+  
   <div id="bottomboxes">
     <div id="countdown"></div>
     <div id="timeofday" class="border-gray">
@@ -23,70 +27,21 @@
     </div>
     <div id="weather" class="border-gray"><div id="asof">Updated: <span class="time">12:00 AM</span></div><div id="currentimage"></div><div id="currently"><div class="temp"></div><div class="title"></div><div class="location"></div></div><div id="forecast"><div id="forecast0"><div class="day">Today</div><div class="icon"></div><div class="title"></div><div class="temp"><span class="high"></span> / <span class="low"></span></div></div><div id="forecast1"><div class="day">Tomorrow</div><div class="icon"></div><div class="title"></div><div class="temp"><span class="high"></span> / <span class="low"></span></div></div></div></div>
   </div>
-  <div id="rsstickercontainer"><div class="feedicon"><img src="" id="feedicon" /></div><ul id="rssticker"></ul></div>
+  <div id="rsstickercontainer">
+    <ul id="ticker02">
+      <li><span>10/10/2007</span><a href="#">news item from CNN goes here...a very long one...updates pending</a></li>
+      <li><span>10/10/2007</span><a href="#">news item from CNN goes here...a very long one...updates pending</a></li>
+      <li><span>10/10/2007</span><a href="#">news item from CNN goes here...a very long one...updates pending</a></li>
+ </ul>
+  
   <div id="dimmer"></div>
   <div id="newticketcontainer">
-    <div class="alertbanner">NEW TICKET</div>
-    <div class="alertbannerbottom">NEW TICKET</div>
-    <div id="subject"></div>
-    <div id="posteddate" class="details"><div class="label">Date:</div><span class="name"></span></div>
-    <div id="from" class="details"><div class="label">From:</div><span class="name"></span></div>
-    <div id="department" class="details"><div class="label">Department:</div><span class="name"></span></div>
-    <div id="priority" class="details"><div class="label">Priority:</div><span class="name"></span></div>
-    <div id="message" class="details"><div class="label">Messsage:</div><div class="message"></span></div>
+
   </div>
-  
+
  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
-   
-  <script language="JavaScript" type="text/javascript">
+ <script type="text/javascript" src="media/widgetload.js"></script>
+ <script type="text/javascript" src="media/jquery.li-scroller.1.0.js"></script>
 
-function loadEvents() {
-  $.ajax({
- url: "/events",
- success: function(events_json){
-    $("#timestamp").html('');
-    $("#eventtitle").html('');
-    for (var key in events_json) {
-         $("#timestamp").append("<li>" + events_json[key].timestamp + "</li>");
-        $("#eventtitle").append("<li>" + events_json[key].title + "</li>");
-    }
-  }
-});
-	}
-
-	function loadCalendar() {
-$.ajax({
- url: "/calendar",
- success: function(calendar_json){
-  for (var key in calendar_json) {
-     $("#" + key).html(calendar_json[key]);
-  }
-}
-});
-	}
-	
-    $(document).ready(function() {
-
-
-/* $.ajax({
- url: "/nextbus",
- success: function(nextbus_json){
-      $("#leftTop").html(html);
- }
-});
-
-$.ajax({
- url: "/weather",
- success: function(weather_json){
-      $("#leftBottom").html(html);
- }
-});
-*/
-
-  setInterval('loadCalendar()', 1000 );
-  setInterval('loadEvents()', 1000 );
-
-    });
-  </script>
-</body>
+  </body>
 </html> 
