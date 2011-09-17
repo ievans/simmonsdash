@@ -12,6 +12,20 @@ function loadEvents() {
     });
 }
 
+function loadNews() {
+    $.ajax({
+	url: "/news",
+	success: function(news_json) {
+	    $("#newsticker").html('');
+	    for (var key in news_json) {
+		$("#newsticker").append("<li><span>" + news_json[key].timestamp + '</span><a href="#">'
+					+ news_json[key].title + "</a></li>");
+	    }
+	},
+	async: false
+    });
+}
+
 function loadCalendar() {
     $.ajax({
 	url: "/calendar",
@@ -26,8 +40,10 @@ function loadCalendar() {
 $(document).ready(function() {
     setInterval(loadCalendar, 1000 );
     setInterval(loadEvents, 1000 );
+
 $(function(){
-    $("ul#ticker02").liScroll({travelocity: 0.05});
+    loadNews();
+    $("ul#newsticker").liScroll({travelocity: 0.05});
 });
 
 });

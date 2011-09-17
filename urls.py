@@ -11,6 +11,7 @@ patterns('',
          url(r'^events/', 'simmonsdash.views.events', name='events'),
          url(r'^nextbus/', 'simmonsdash.nextbus.nextbus', name='nextbus'),
          url(r'^weather/', 'simmonsdash.views.weather', name='weather'),
+         url(r'^news/', 'simmonsdash.views.news', name='news'),
          
     # url(r'^simmonsdash/', include('simmonsdash.foo.urls')),
          url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {

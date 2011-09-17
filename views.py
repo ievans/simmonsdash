@@ -5,14 +5,14 @@ import calendar
 from time import mktime
 import pywapi, string
 import json
-
+import feedparser
+    
 zipcode = "02139"
 
-def home(req):
+def home(request):
     return render_to_response('index.html', { 'date': '1-2-2011' })
 
 def events(request):
-    import feedparser
     def formatEventsDate(d):
         st = d.strftime('%a') if d - datetime.now() < timedelta(7) else d.strftime("%m/%d")
         shorttime = eventDateTime.strftime('%I:%M')
@@ -32,7 +32,7 @@ def events(request):
     jsonout = json.dumps(smallevents, sort_keys=True, indent=4)
     return HttpResponse(jsonout, mimetype="application/json")
 
-def calendar(req):
+def calendar(request):
     now = datetime.now()
     calender = {'month' : now.strftime("%B"),
      'day' : now.day,
@@ -42,7 +42,18 @@ def calendar(req):
     jsonout = json.dumps(calender, sort_keys=True, indent=4)
     return HttpResponse(jsonout, mimetype="application/json")
 
-def weather(req):
+def news(request):
+    url = 'http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&output=rss'
+    d2 = feedparser.parse(url)
+    smallnews = []
+    for newsitem in d2['entries']:
+        ts = datetime.fromtimestamp(mktime(newsitem.updated_parsed))
+        smallnews.extend([ { 'title' : newsitem['title'],
+                             'timestamp' : ts.strftime('%m/%d %I:%M') }])
+    jsonout = json.dumps(smallnews, sort_keys=True, indent=4)
+    return HttpResponse(jsonout, mimetype="application/json")
+
+def weather(request):
     weather = pywapi.get_weather_from_google(zipcode)
     forecasts = weather['forecasts']
     day1 = forecasts[0]
