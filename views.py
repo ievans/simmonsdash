@@ -8,6 +8,7 @@ import json
 import feedparser
     
 zipcode = "02139"
+baseUrl = 'http://google.com'
 
 def home(request):
     return render_to_response('index.html', { 'date': '1-2-2011' })
@@ -61,12 +62,14 @@ def weather(request):
     
     currentCondition = string.lower(weather['current_conditions']['condition'])
     currentTemp = string.lower(weather['current_conditions']['temp_f'])
+    currentIconURL = baseUrl + string.lower(weather['current_conditions']['icon'])
 
     future = []
     for i in range(2):
         future.append((string.lower(forecasts[i]['condition']), string.lower(forecasts[i]['high']), string.lower(forecasts[i]['low'])))
     return render_to_response('weather.html', { 'currentCondition': currentCondition,
-                                                'currentTemp':  currentTemp,
+                                                'currentTemp': currentTemp,
+                                                'currentIcon': currentIconURL,
                                                 'todayCondition': future[0][0],
                                                 'todayHigh': future[0][1],
                                                 'todayLow': future[0][2],
