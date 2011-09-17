@@ -10,7 +10,7 @@
     <div id="timeofday" class="border-gray">
       <div id="calendarclock" class="title">
 	<div id="dayofweek" class="float-left"></div>
-	Coming Up</div><div class="float-left">
+	Upcoming MIT Events</div><div class="float-left">
 	<div id="month"></div>
 	<div id="day"></div>
 	<div id="clock"></div>
@@ -36,10 +36,35 @@
     <div id="message" class="details"><div class="label">Messsage:</div><div class="message"></span></div>
   </div>
   
-  <iframe height="0" width="0" id="newticketlight" src="" style="display:none"></iframe>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
    
-  <script language="JavaScript" type="text/javascript"> 
+  <script language="JavaScript" type="text/javascript">
+
+function loadEvents() {
+  $.ajax({
+ url: "/events",
+ success: function(events_json){
+    $("#timestamp").html('');
+    $("#eventtitle").html('');
+    for (var key in events_json) {
+         $("#timestamp").append("<li>" + events_json[key].timestamp + "</li>");
+        $("#eventtitle").append("<li>" + events_json[key].title + "</li>");
+    }
+  }
+});
+	}
+
+	function loadCalendar() {
+$.ajax({
+ url: "/calendar",
+ success: function(calendar_json){
+  for (var key in calendar_json) {
+     $("#" + key).html(calendar_json[key]);
+  }
+}
+});
+	}
+	
     $(document).ready(function() {
 
 
@@ -57,25 +82,9 @@ $.ajax({
  }
 });
 */
-$.ajax({
- url: "/calendar",
- success: function(calendar_json){
-  for (var key in calendar_json) {
-     $("#" + key).html(calendar_json[key]);
-  }
-}
-});
 
-$.ajax({
- url: "/events",
- success: function(events_json){
-    for (var key in events_json) {
-        $("#timestamp").append("<li>" + events_json[key].timestamp + "</li>");
-        $("#eventtitle").append("<li>" + events_json[key].title + "</li>");
-    } }
-});
-
-   setInterval('loadCalendar()', 30000 )
+  setInterval('loadCalendar()', 1000 );
+  setInterval('loadEvents()', 1000 );
 
     });
   </script>

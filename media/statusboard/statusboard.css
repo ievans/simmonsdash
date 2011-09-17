@@ -335,20 +335,20 @@ border: solid 1px #4c4c4c;
 }
 #timeofday {
 	float: left;
-	height: 75%;
 	margin-left: 2%;
 	margin-top: 1%;
+	padding-bottom: 5px;
 	background: -webkit-gradient(
     linear,
     left bottom,
     left top,
     color-stop(0.37, rgb(193,193,193)),
-    color-stop(0.69, rgb(247,247,247))
+    color-stop(1, rgb(247,247,247))
 );
 	background: -moz-linear-gradient(
     center bottom,
     rgb(193,193,193) 37%,
-    rgb(247,247,247) 69%
+    rgb(247,247,247) 100%
 );
 	width: 43%;
 	text-align:center;

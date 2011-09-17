@@ -15,7 +15,10 @@ def events(request):
     import feedparser
     def formatEventsDate(d):
         st = d.strftime('%a') if d - datetime.now() < timedelta(7) else d.strftime("%m/%d")
-        st += ' ' + eventDateTime.strftime('%I:%M') + eventDateTime.strftime('%p')[0]
+        shorttime = eventDateTime.strftime('%I:%M')
+        if shorttime[0] == '0': shorttime = shorttime[1:]
+        if shorttime[-3:] == ':00': shorttime = shorttime[:-3]
+        st += ' ' + shorttime + eventDateTime.strftime('%p')[0].lower()
         return st
     
     url = "http://events.mit.edu/rss/index.html?fulltext=&andor=and&categories=24&categories=4&categories=127&categories=2&categories=7&sponsors%3A0=&_rss=Create+RSS+Feed"
@@ -33,10 +36,11 @@ def calendar(req):
     now = datetime.now()
     calender = {'month' : now.strftime("%B"),
      'day' : now.day,
-     'clock' : now.strftime("%I:%M") + ' ' + now.strftime("%p"),
+     'clock' : now.strftime("%I:%M:%S") + ' ' + now.strftime("%p"),
      'dayofweek' : now.strftime("%A")
      }
     jsonout = json.dumps(calender, sort_keys=True, indent=4)
+    print jsonout
     return HttpResponse(jsonout, mimetype="application/json")
 
 def weather(req):
