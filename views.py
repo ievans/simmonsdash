@@ -11,7 +11,7 @@ zipcode = "02139"
 baseUrl = 'http://google.com'
 
 def home(request):
-    return render_to_response('index.html', { 'date': '1-2-2011' })
+    return render_to_response('index.html', None)
 
 def events(request):
     def formatEventsDate(d):

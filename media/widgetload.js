@@ -37,9 +37,22 @@ function loadCalendar() {
     });
 }
 
+function loadNextbus() {
+    $.ajax({
+	url: "/nextbus",
+	success: function(nextbus_json){
+	    $("#nextbus").html("");
+	    for (var key in nextbus_json) {
+		$("#nextbus").append("<li>" + nextbus_json[key] + "</li>");
+	    }
+	}
+    });
+}
+
 $(document).ready(function() {
     setInterval(loadCalendar, 1000 );
-    setInterval(loadEvents, 1000 );
+    setInterval(loadEvents, 10000 );
+    setInterval(loadNextbus, 1000);
 
 $(function(){
     loadNews();
@@ -48,13 +61,7 @@ $(function(){
 
 });
 
-/* $.ajax({
-   url: "/nextbus",
-   success: function(nextbus_json){
-   $("#leftTop").html(html);
-   }
-   });
-   
+ /*  
    $.ajax({
    url: "/weather",
    success: function(weather_json){
