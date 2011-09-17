@@ -644,3 +644,61 @@ white-space: nowrap;
 margin: 0 50px 0 0;
 } 
 
+/* Luke's widget */
+
+.nexttitle {
+	text-align: left;
+	color: white;
+	font-size: 18pt;
+	text-align: center;
+	background: black;
+	border-style: solid;
+	border-width: 3px;
+	border-color: black;
+	border-radius: 9px 9px 0px 0px;
+	}
+
+.nextbus {
+	/*
+	background: -webkit-gradient(linear, center top, center bottom, #a8a8a8, #454545);
+	*/
+
+	background-image: url(tile.png);
+	max-width: 200px;
+	min-width: 50px;
+	border-style: solid;
+	border-width: 10px:
+	border-color: black;
+	border-radius: 15px;
+
+ 
+}
+
+.nextbus div {
+	font-family: "Arial";
+	font-style: bold;
+	
+}
+
+.next1 {
+	text-align: center;
+
+}
+
+.next1Time {
+	font-size: 100pt;
+	font-style: bold;
+	color: yellow;
+	display: inline;
+
+}
+
+.next1Min {
+	color: white;
+	display:inline;
+}
+
+.nextGeneric {
+	color: yellow;
+	text-align: center;
+}
