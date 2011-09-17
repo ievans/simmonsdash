@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 import calendar
 from time import mktime
 import pywapi, string
+import json
 
 zipcode = "02139"
 
@@ -13,28 +14,30 @@ def home(req):
 def events(request):
     import feedparser
     def formatEventsDate(d):
-        return d.strftime('%a') if d - datetime.now() < timedelta(7) else d.strftime("%m/%d")
+        st = d.strftime('%a') if d - datetime.now() < timedelta(7) else d.strftime("%m/%d")
+        st += ' ' + eventDateTime.strftime('%I:%M') + eventDateTime.strftime('%p')[0]
+        return st
+    
     url = "http://events.mit.edu/rss/index.html?fulltext=&andor=and&categories=24&categories=4&categories=127&categories=2&categories=7&sponsors%3A0=&_rss=Create+RSS+Feed"
     d2 = feedparser.parse(url)
     smallevents = [] # contains only the things we want
     for event in d2['entries']:
         eventDateTime = datetime.fromtimestamp(mktime(event.updated_parsed))
         smallevents.extend([ { 'title' : event['title'],
-                               'date' : formatEventsDate(eventDateTime),
-                               'time' : eventDateTime.strftime('%I:%M'),
-                               'ampm' : eventDateTime.strftime('%p'),
-                               'description' : event['description'] } ])
-
-    return render_to_response('events.html', { 'events' : smallevents })
+                               'timestamp' : formatEventsDate(eventDateTime),
+                               'eventdescription' : event['description'] } ])
+    jsonout = json.dumps(smallevents, sort_keys=True, indent=4)
+    return HttpResponse(jsonout, mimetype="application/json")
 
 def calendar(req):
     now = datetime.now()
-    return render_to_response('calendar.html', {'monthName' : now.strftime("%B"),
-                                                'dayNumber' : now.day,
-                                                'clock' : now.strftime("%I:%M"),
-                                                'ampm' : now.strftime("%p"),
-                                                'dayName' : now.strftime("%A")
-                                                })
+    calender = {'month' : now.strftime("%B"),
+     'day' : now.day,
+     'clock' : now.strftime("%I:%M") + ' ' + now.strftime("%p"),
+     'dayofweek' : now.strftime("%A")
+     }
+    jsonout = json.dumps(calender, sort_keys=True, indent=4)
+    return HttpResponse(jsonout, mimetype="application/json")
 
 def weather(req):
     weather = pywapi.get_weather_from_google(zipcode)
