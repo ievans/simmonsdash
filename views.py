@@ -3,9 +3,9 @@ from django.shortcuts import render_to_response
 from datetime import datetime, timedelta
 import calendar
 from time import mktime
-import pywapi, string
 import json
 import feedparser
+import weather as w
     
 zipcode = "02139"
 baseUrl = 'http://google.com'
@@ -55,26 +55,8 @@ def news(request):
     return HttpResponse(jsonout, mimetype="application/json")
 
 def weather(request):
-    weather = pywapi.get_weather_from_google(zipcode)
-    forecasts = weather['forecasts']
-    day1 = forecasts[0]
-    day2 = forecasts[1]
-    
-    currentCondition = string.lower(weather['current_conditions']['condition'])
-    currentTemp = string.lower(weather['current_conditions']['temp_f'])
-    currentIconURL = baseUrl + string.lower(weather['current_conditions']['icon'])
-
-    future = []
-    for i in range(2):
-        future.append((string.lower(forecasts[i]['condition']), string.lower(forecasts[i]['high']), string.lower(forecasts[i]['low'])))
-    return render_to_response('weather.html', { 'currentCondition': currentCondition,
-                                                'currentTemp': currentTemp,
-                                                'currentIcon': currentIconURL,
-                                                'todayCondition': future[0][0],
-                                                'todayHigh': future[0][1],
-                                                'todayLow': future[0][2],
-                                                'nextDayCondition': future[1][0],
-                                                'nextDayHigh': future[1][1],
-                                                'nextDayLow': future[1][2],
-                                                })
+    result = w.getWeather('02139', '../../media/weather/')
+    return render_to_response('weather.html', {'currentConditions': result['current_conditions']['condition'],
+                                               'currentTemp': result['current_conditions']['temp_f'],
+                                               'currentIcon': result['current_conditions']['icon']})
 
