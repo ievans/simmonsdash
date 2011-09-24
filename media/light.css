@@ -7,6 +7,10 @@ body {
 
 }
 
+*{
+    -webkit-font-smoothing: antialiased;
+}
+
 .contain{
     width:1920px;
     height:1200px;
@@ -128,6 +132,23 @@ body {
     height:47%;
     top:50%;
     left:29%;
+    font-size:15pt;
+    color:#999999;
+    overflow:hidden;
+    position:relative;
+}
+
+#eventlist{
+    height:90%;
+    overflow:hidden;
+}
+.events ul{
+    list-style:none;
+    padding-left:10px;
+}
+.events li{
+    padding-left:5px;
+    margin-bottom:20px;
 }
 
 .newsticker{
@@ -142,7 +163,7 @@ body {
 }
 .newsticker li{
     float:left;
-    margin-right:30px;
+    margin-right:50px;
     font-size:15pt;
     color:#444444;
     font-weight:bold;
@@ -171,6 +192,19 @@ blu{
 
 grn{
     color:#00CC33;
+}
+
+.dow{
+    color:#00CC33;
+    font-size:25pt;
+    font-weight:bold;
+    margin:0;
+    margin-bottom:15px;
+}
+time{
+    color:#444444;
+    font-weight:bold;
+    font-size:22pt;
 }
 
 ylw{

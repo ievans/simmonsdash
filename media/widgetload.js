@@ -12,6 +12,47 @@ function loadEvents() {
     });
 }
 
+
+function loadEvents2() {
+    $.ajax({
+	url: "/events",
+	success: function(events_json){
+	    $("#eventlist").html('');
+        var prev="";
+        var dow="";
+	    for (var key in events_json) {
+        var na=events_json[key].timestamp.split(' ')
+        if(na[0]!=prev){
+            prev=na[0];
+            if(prev=="Sun"){
+                dow="sunday";
+            }
+            if(prev=="Mon"){
+                dow="monday";
+            }
+            if(prev=="Tue"){
+                dow="tuesday";
+            }
+            if(prev=="Wed"){
+                dow="wednesday";
+            }
+            if(prev=="Thu"){
+                dow="thursday";
+            }
+            if(prev=="Fri"){
+                dow="friday";
+            }
+            if(prev=="Sat"){
+                dow="saturday";
+            }
+		    $("#eventlist").append("<p class='dow'>" + dow + " events</p>");
+        }
+		$("#eventlist").append("<li><time>" +na[1].replace('a', 'am').replace('p', 'pm')+" </time> " +events_json[key].title+ "</li>");
+	    }
+	}
+    });
+}
+
 function loadClock(){
     var time = new Date ();
     var hours=time.getHours();
@@ -64,8 +105,14 @@ function loadNextbus() {
 }
 
 $(document).ready(function() {
+    loadCalendar();
+    loadEvents();
+    loadEvents2();
+    loadNextbus();
+    loadClock();
     setInterval(loadCalendar, 60000 );
     setInterval(loadEvents, 10000 );
+    setInterval(loadEvents2, 10000 );
     setInterval(loadNextbus, 10000);
     setInterval(loadClock, 1000);
 
