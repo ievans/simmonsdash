@@ -81,10 +81,12 @@ body {
     color:#BABABA;
 }
 
-.clock date{
+.clock .date{
     font-size:25pt;
-    color:#666666;
     color:#E8E8E8;
+    color:#666666;
+    margin:0;
+    margin-bottom:-20px;
 }
 
 .shuttle{

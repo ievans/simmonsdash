@@ -12,7 +12,6 @@ function loadEvents() {
     });
 }
 
-
 function loadEvents2() {
     $.ajax({
 	url: "/events",
@@ -60,10 +59,17 @@ function loadClock(){
     var months=new Array("january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december");
     var month=months[time.getMonth()];
     var M= ( hours < 12 ) ? "AM" : "PM";
+    M=String(M);
+    if(M.length==0){
+        M="00";
+    }
+    else if(M.length==1){
+        M="0"+M;
+    }
     if(hours>12){
         hours-=12;
     }
-    $("#newclock").html('<date>'+month+' '+time.getDay()+', '+(time.getYear()+1900)+'</date><br><time>'+hours+":"+mins+'</time><m> '+M+'</m>');
+    $("#newclock").html('<p class="date">'+month+' '+time.getDay()+', '+(time.getYear()+1900)+'</p><time>'+hours+":"+mins+'</time><m> '+M+'</m>');
 
 }
 

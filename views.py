@@ -47,6 +47,13 @@ def calendar(request):
     jsonout = json.dumps(calender, sort_keys=True, indent=4)
     return HttpResponse(jsonout, mimetype="application/json")
 
+def posters(request):
+    p={}
+    p["posters"]='a.jpg';
+    jsonout = json.dumps(p, sort_keys=True, indent=4)
+    return HttpResponse(jsonout, mimetype="application/json")
+
+
 def news(request):
     url = 'http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&output=rss'
     d2 = feedparser.parse(url)
