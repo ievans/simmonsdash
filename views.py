@@ -13,6 +13,10 @@ baseUrl = 'http://google.com'
 def home(request):
     return render_to_response('index.html', None)
 
+
+def light(request):
+    return render_to_response('light.html', {})
+
 def events(request):
     def formatEventsDate(d):
         st = d.strftime('%a') if d - datetime.now() < timedelta(7) else d.strftime("%m/%d")

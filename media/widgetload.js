@@ -12,6 +12,20 @@ function loadEvents() {
     });
 }
 
+function loadClock(){
+    var time = new Date ();
+    var hours=time.getHours();
+    var mins=time.getMinutes();
+    var months=new Array("january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december");
+    var month=months[time.getMonth()];
+    var M= ( hours < 12 ) ? "AM" : "PM";
+    if(hours>12){
+        hours-=12;
+    }
+    $("#newclock").html('<date>'+month+' '+time.getDay()+', '+(time.getYear()+1900)+'</date><br><time>'+hours+":"+mins+'</time><m> '+M+'</m>');
+
+}
+
 function loadNews() {
     $.ajax({
 	url: "/news",
@@ -50,9 +64,10 @@ function loadNextbus() {
 }
 
 $(document).ready(function() {
-    setInterval(loadCalendar, 1000 );
+    setInterval(loadCalendar, 60000 );
     setInterval(loadEvents, 10000 );
-    setInterval(loadNextbus, 1000);
+    setInterval(loadNextbus, 10000);
+    setInterval(loadClock, 1000);
 
 $(function(){
     loadNews();

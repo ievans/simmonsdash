@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+    padding:0;
+    font-family: 'Ubuntu', verdana, arial, helvetica, sans-serif;
+    background-color: #BABABA;
+    height: 100%;
+
+}
+
+.contain{
+    width:1920px;
+    height:1200px;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color: #E8E8E8;
+}
+
+.wrapper{
+    position:absolute;
+    display:block;
+}
+
+.inner{
+    background-color:white;
+    display:block;
+    height:auto;
+    position:absolute;
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
+    margin:15px;
+}
+
+.posters{
+    width:47%;
+    height:97%;
+    top:0;
+    right:0;
+}
+
+.simmons{
+    width:53%;
+    height:20%;
+    top:0;
+    left:0;
+}
+
+.simmons img{
+    width:90%;
+}
+
+.simmons .inner{
+    background-color:#E8E8E8;
+}
+
+.clock{
+    width:53%;
+    height:30%;
+    top:20%;
+    left:0;
+    font-size:50pt;
+    text-align:center;
+}
+.clock .inner{
+    background-color:#E8E8E8;
+}
+.clock time{
+    font-size:170pt;
+    font-weight:bold;
+    color:#BABABA;
+}
+.clock m{
+    font-size:60pt;
+    color:#BABABA;
+}
+
+.clock date{
+    font-size:25pt;
+    color:#666666;
+    color:#E8E8E8;
+}
+
+.shuttle{
+    width:29%;
+    height:23%;
+    top:50%;
+    left:0;
+}
+
+.shuttle .minutes{
+    float:left;
+    font-size:15pt;
+    color:#BABABA;
+    text-align:center;
+    margin-left:15px;
+}
+
+.shuttle big{
+    font-size:80pt;
+}
+
+.shuttle bold{
+    font-size:80pt;
+    font-weight:bold;
+    color:#0066CC;
+}
+
+.amper{
+    float:left;
+    font-size:30pt;
+    color:#BABABA;
+    margin-left:15px;
+    margin-top:30px;
+}
+
+.weather{
+    width:29%;
+    height:24%;
+    top:73%;
+    left:0;
+}
+
+.events{
+    width:24%;
+    height:47%;
+    top:50%;
+    left:29%;
+}
+
+.newsticker{
+    width:100%;
+    height:3%;
+    bottom:0;
+    left:0;
+}
+.newsticker ul{
+    list-style:none;
+}
+.newsticker li{
+    float:left;
+}
+
+
+.boxhead{
+    font-weight:bold;
+    font-size:25pt;
+    color:#BABABA;
+    margin:0;
+    margin-left:10px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+blu{
+    color:#0066CC;
+}
+
+grn{
+    color:#00CC33;
+}
+
+ylw{
+    color:#FFCC00;
+}
