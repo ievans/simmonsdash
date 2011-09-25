@@ -1,0 +1,5 @@
+architecture of the dormbase system
+
+- directory
+- authentication system - kerberos + non-kerberos (Shibboleth)
+- 
