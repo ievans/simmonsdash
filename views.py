@@ -66,7 +66,7 @@ def news(request):
     return HttpResponse(jsonout, mimetype="application/json")
 
 def weather(request):
-    result = w.getWeather('02139', '../../media/weather/')
+    result = w.getWeather('02139', 'media/weather/')
     jsonout = json.dumps(result, sort_keys=True, indent=4)
     return HttpResponse(jsonout, mimetype="application/json")
 

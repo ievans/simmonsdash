@@ -59,6 +59,9 @@ function loadWeather() {
 	    for (var key in weather_json) {
 		$("#" + key).html(weather_json[key]);
 	    }
+	    $("#nowicon").attr("src", weather_json["nowicon"]);
+	    $("#todayicon").attr("src", weather_json["todayicon"]);
+	    $("#tomorrowicon").attr("src", weather_json["tomorrowicon"]);
 	},
 	async: true
     });    
@@ -128,6 +131,7 @@ $(document).ready(function() {
     loadEvents2();
     loadNextbus();
     loadClock();
+    loadWeather();
     setInterval(loadCalendar, 60000 );
     setInterval(loadEvents, 10000 );
     setInterval(loadEvents2, 10000 );
