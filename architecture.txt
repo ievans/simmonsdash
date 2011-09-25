@@ -11,6 +11,8 @@ Directory System
 	other email
 	url
 	about
+	bool active
+	bool livesInSimmons
 	
  model Room
   	room number
@@ -37,9 +39,30 @@ Mailing Lists
 
 	hmmmmm
 
+--------------------------------------------------------------------------------
+Packages
+
+--------------------------------------------------------------------------------
+Guest Lists
+      
+    model GuestList
+    	  ownerID -> FK to Resident
+	  name
 
 --------------------------------------------------------------------------------
 Resources
 
 	movies 
 	items behind desk
+
+--------------------------------------------------------------------------------
+ACLs
+
+    model Group
+	  bool auto # true if user was added to group automatically
+	  mailingList
+	  owner
+
+    model GroupMembers
+    	  memberID -> ResidentID
+	  isAdmin
