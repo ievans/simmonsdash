@@ -465,12 +465,12 @@ font-weight: bold;
 }
 
 #forecast {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 50%;
-	text-align: center;
-	font-size: small;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+/*    font-size: small;*/
 }
 
 #forecast img {
@@ -479,21 +479,22 @@ font-weight: bold;
 }
 
 #forecast0, #forecast1 {
-	float: left;
-	width: 50%;
+    float: left;
+    width: 50%;
 }
 
 .day {
-	color: #999999;
-	border-top: 1px solid gray;
-	border-bottom: 1px solid gray;
-	background: #09128c;
+    color: #999999;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    background: #09128c;
 }
+
 #forecast .temp {
-	color: #999999;
+    color: #999999;
 }
 .high, .low {
-	color: #CCCCCC;
+    color: #CCCCCC;
 }
 #webcam {
 	float: left;
