@@ -44,7 +44,7 @@ def getIcon(condition):
               'Cloudy': '23', 
               'Fog': '20',
               'Haze': '19',
-              'Light Rain': '',
+              'Light Rain': '11',
               'Mostly Cloudy': '28',
               'Overcast': '26',
               'Partly Cloudy': '30',
