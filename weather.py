@@ -1,3 +1,21 @@
+# API for weather. return a python dict with these keys
+
+    ## nowtime - current as of time, eg 12:00 AM
+    ## nowicon - url to an image
+    ## nowtemp
+    ## nowtitle
+    ## nowlocation
+
+    ## todayicon
+    ## todaytitle
+    ## todaytemphigh
+    ## todaytemplow
+
+    ## tomorrowicon
+    ## tomorrowtitle
+    ## tomorrowtemphigh
+    ## tomorrowtemplow
+
 import pywapi
 
 def getWeather(zipcode, pathPrefix = ''):
@@ -6,4 +24,5 @@ def getWeather(zipcode, pathPrefix = ''):
     return weather
 
 def getIcon(condition):
-    return '42.png'
+    return '42.
+

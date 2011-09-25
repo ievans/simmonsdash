@@ -52,6 +52,18 @@ function loadEvents2() {
     });
 }
 
+function loadWeather() {
+    $.ajax({
+	url: "/weather",
+	success: function(weather_json) {
+	    for (var key in weather_json) {
+		$("#" + key).html(weather_json[key]);
+	    }
+	},
+	async: true
+    });    
+}
+
 function loadClock(){
     var time = new Date ();
     var hours=time.getHours();
