@@ -54,7 +54,7 @@ def posters(request):
     return HttpResponse(jsonout, mimetype="application/json")
 
 def news(request):
-    extractCalendarEvents('http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&output=rss')
+    return extractCalendarEvents('http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&output=rss')
 
 def extractCalendarEvents(url):
     d2 = feedparser.parse(url)
@@ -67,7 +67,7 @@ def extractCalendarEvents(url):
     return HttpResponse(jsonout, mimetype="application/json")
 
 def localnews(request):
-    extractCalendarEvents('https://www.google.com/calendar/feeds/simmons-tech%40mit.edu/public/basic')
+    return extractCalendarEvents('https://www.google.com/calendar/feeds/simmons-tech%40mit.edu/public/basic')
 
 def weather(request):
     result = w.getWeather('02139', 'media/weather/')
