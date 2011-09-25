@@ -426,28 +426,44 @@ font-weight: bold;
 	background: -webkit-gradient( linear,left bottom, left top, color-stop(0, rgb(9,6,73)), color-stop(1, rgb(54,41,114)));
 	background: -moz-linear-gradient( center bottom,rgb(9,6,73) 0%, rgb(54,41,114) 100%);
 }
-#currentimage {
-	position: absolute;
-	top: -25px;
-	left: -25px;
-	z-index: 100;
+
+#current {
+	float: left;
+	padding: 1%;
+	margin: 1%;
+	height: 50%;
+	width: 95%;
+	color: white;
 }
+
+#current img {
+    float: left;
+    height: 90%;
+}
+
 #currently {
-	position: absolute;
-	right: 15px;
-	top: 5px;
-	font-size:xx-large;
-	font-weight:bold;
-	text-align: right;
+   float: right;
+   width: 60%;
 }
-#currently .title {
-	font-size: 24px;
+
+#nowtemp {
+    text-align: right;
+    font-size: xx-large;
+    font-weight: bold;
 }
-#currently .location {
-	margin-top: 5px;
-	font-size: small;
-	color: #CCCCCC;
+
+#nowtitle {
+    text-align: right;
+    font-size: xx-large;
+    font-weight: bold;
 }
+
+#nowlocation {
+    color: #eee;
+    text-align: right;
+    font-size: 12pt;
+}
+
 #asof {
 	text-align: left;
 	position: absolute;

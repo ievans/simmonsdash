@@ -23,14 +23,14 @@ def getWeather(zipcode, pathPrefix = ''):
     result = {}
     result['nowtime'] = weather['forecast_information']['current_date_time']
     result['nowicon'] = pathPrefix + getIcon(weather['current_conditions']['condition'])
-    result['nowtemp'] = weather['current_conditions']['temp_f']
-    result['nowtitle'] = weather['current_conditions']['condition']
+    result['nowtemp'] = weather['current_conditions']['temp_f'] + '&deg;'
+    result['nowtitle'] = weather['current_conditions']['condition'] 
     result['nowlocation'] = weather['forecast_information']['city']
     
     result['todayicon'] = pathPrefix + getIcon(weather['forecasts'][0]['condition']) 
     result['todaytitle'] = weather['forecasts'][0]['condition']
-    result['todaytemphigh'] = weather['forecasts'][0]['high']
-    result['todaytemplow'] = weather['forecasts'][0]['low']
+    result['todaytemphigh'] = weather['forecasts'][0]['high']  + '&deg;'
+    result['todaytemplow'] = weather['forecasts'][0]['low'] + '&deg;'
 
     result['tomorrowicon'] = pathPrefix + getIcon(weather['forecasts'][1]['condition'])
     result['tomorrowtitle'] = weather['forecasts'][1]['condition']
