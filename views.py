@@ -53,9 +53,10 @@ def posters(request):
     jsonout = json.dumps(p, sort_keys=True, indent=4)
     return HttpResponse(jsonout, mimetype="application/json")
 
-
 def news(request):
-    url = 'http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&output=rss'
+    return extractCalendarEvents('http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&output=rss')
+
+def extractCalendarEvents(url):
     d2 = feedparser.parse(url)
     smallnews = []
     for newsitem in d2['entries']:
@@ -64,6 +65,9 @@ def news(request):
                              'timestamp' : ts.strftime('%m/%d %I:%M') }])
     jsonout = json.dumps(smallnews, sort_keys=True, indent=4)
     return HttpResponse(jsonout, mimetype="application/json")
+
+def localnews(request):
+    return extractCalendarEvents('https://www.google.com/calendar/feeds/simmons-tech%40mit.edu/public/basic')
 
 def weather(request):
     result = w.getWeather('02139', 'media/weather/')

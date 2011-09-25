@@ -23,19 +23,19 @@ def getWeather(zipcode, pathPrefix = ''):
     result = {}
     result['nowtime'] = weather['forecast_information']['current_date_time']
     result['nowicon'] = pathPrefix + getIcon(weather['current_conditions']['condition'])
-    result['nowtemp'] = weather['current_conditions']['temp_f']
-    result['nowtitle'] = weather['current_conditions']['condition']
+    result['nowtemp'] = weather['current_conditions']['temp_f'] + '&deg;'
+    result['nowtitle'] = weather['current_conditions']['condition'] 
     result['nowlocation'] = weather['forecast_information']['city']
     
     result['todayicon'] = pathPrefix + getIcon(weather['forecasts'][0]['condition']) 
     result['todaytitle'] = weather['forecasts'][0]['condition']
-    result['todaytemphigh'] = weather['forecasts'][0]['high']
-    result['todaytemplow'] = weather['forecasts'][0]['low']
+    result['todaytemphigh'] = weather['forecasts'][0]['high']  + '&deg;'
+    result['todaytemplow'] = weather['forecasts'][0]['low'] + '&deg;'
 
     result['tomorrowicon'] = pathPrefix + getIcon(weather['forecasts'][1]['condition'])
     result['tomorrowtitle'] = weather['forecasts'][1]['condition']
-    result['tomorrowtemphigh'] = weather['forecasts'][1]['high']
-    result['tomorrowtemplow'] = weather['forecasts'][1]['low']
+    result['tomorrowtemphigh'] = weather['forecasts'][1]['high']  + '&deg;'
+    result['tomorrowtemplow'] = weather['forecasts'][1]['low']  + '&deg;'
     
     return result
 
@@ -58,6 +58,7 @@ def getIcon(condition):
               'Mostly Sunny': '32',
               'Partly Sunny': '44',
               'Scattered Showers': '1',
-              'Sunny': '36'}
+              'Sunny': '36',
+              '': 'NOCONNECTION'}
 
     return c2icon[condition] + '.png'
