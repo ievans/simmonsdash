@@ -24,5 +24,24 @@ def getWeather(zipcode, pathPrefix = ''):
     return weather
 
 def getIcon(condition):
-    return '42.
+    c2icon = {'Clear': '32', 
+              'Cloudy': '23', 
+              'Fog': '20',
+              'Haze': '19',
+              'Light Rain': '',
+              'Mostly Cloudy': '28',
+              'Overcast': '26',
+              'Partly Cloudy': '30',
+              'Rain': '11',
+              'Rain Showers': '10',
+              'Showers': '8',
+              'Thunderstorm': '4',
+              'Chance of Showers': '8',
+              'Chance of Snow': '15',
+              'Chance of Storm': '3',
+              'Mostly Sunny': '34',
+              'Partly Sunny': '44',
+              'Scattered Showers': '1',
+              'Sunny': '36'}
 
+    return c2icon[condition] + '.png'
