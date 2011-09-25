@@ -44,7 +44,7 @@ def getIcon(condition):
               'Cloudy': '23', 
               'Fog': '20',
               'Haze': '19',
-              'Light Rain': '',
+              'Light Rain': '11',
               'Mostly Cloudy': '28',
               'Overcast': '26',
               'Partly Cloudy': '30',
@@ -55,7 +55,7 @@ def getIcon(condition):
               'Chance of Showers': '8',
               'Chance of Snow': '15',
               'Chance of Storm': '3',
-              'Mostly Sunny': '34',
+              'Mostly Sunny': '32',
               'Partly Sunny': '44',
               'Scattered Showers': '1',
               'Sunny': '36'}
