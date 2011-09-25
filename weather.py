@@ -34,8 +34,8 @@ def getWeather(zipcode, pathPrefix = ''):
 
     result['tomorrowicon'] = pathPrefix + getIcon(weather['forecasts'][1]['condition'])
     result['tomorrowtitle'] = weather['forecasts'][1]['condition']
-    result['tomorrowtemphigh'] = weather['forecasts'][1]['high']
-    result['tomorrowtemplow'] = weather['forecasts'][1]['low']
+    result['tomorrowtemphigh'] = weather['forecasts'][1]['high']  + '&deg;'
+    result['tomorrowtemplow'] = weather['forecasts'][1]['low']  + '&deg;'
     
     return result
 
@@ -58,6 +58,7 @@ def getIcon(condition):
               'Mostly Sunny': '32',
               'Partly Sunny': '44',
               'Scattered Showers': '1',
-              'Sunny': '36'}
+              'Sunny': '36',
+              '': 'NOCONNECTION'}
 
     return c2icon[condition] + '.png'
