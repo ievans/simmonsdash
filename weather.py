@@ -20,8 +20,24 @@ import pywapi
 
 def getWeather(zipcode, pathPrefix = ''):
     weather = pywapi.get_weather_from_google('02139')
-    weather['current_conditions']['icon'] = pathPrefix + getIcon(weather['current_conditions']['condition'])
-    return weather
+    result = {}
+    result['nowtime'] = weather['forecast_information']['current_date_time']
+    result['nowicon'] = pathPrefix + getIcon(weather['current_conditions']['condition'])
+    result['nowtemp'] = weather['current_conditions']['temp_f']
+    result['nowtitle'] = weather['current_conditions']['condition']
+    result['nowlocation'] = weather['forecast_information']['city']
+    
+    result['todayicon'] = pathPrefix + getIcon(weather['forecasts'][0]['condition']) 
+    result['todaytitle'] = weather['forecasts'][0]['condition']
+    result['todaytemphigh'] = weather['forecasts'][0]['high']
+    result['todaytemplow'] = weather['forecasts'][0]['low']
+
+    result['tomorrowicon'] = pathPrefix + getIcon(weather['forecasts'][1]['condition'])
+    result['tomorrowtitle'] = weather['forecasts'][1]['condition']
+    result['tomorrowtemphigh'] = weather['forecasts'][1]['high']
+    result['tomorrowtemplow'] = weather['forecasts'][1]['low']
+    
+    return result
 
 def getIcon(condition):
     c2icon = {'Clear': '32', 
