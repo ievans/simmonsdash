@@ -67,7 +67,6 @@ def news(request):
 
 def weather(request):
     result = w.getWeather('02139', '../../media/weather/')
-    return render_to_response('weather.html', {'currentConditions': result['current_conditions']['condition'],
-                                               'currentTemp': result['current_conditions']['temp_f'],
-                                               'currentIcon': result['current_conditions']['icon']})
+    jsonout = json.dumps(result, sort_keys=True, indent=4)
+    return HttpResponse(jsonout, mimetype="application/json")
 
