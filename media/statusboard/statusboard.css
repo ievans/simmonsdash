@@ -250,7 +250,6 @@ font-weight: bold;
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 90%;
 	height: 90%;
 	margin: 4%;
 	z-index: 1000;
@@ -274,7 +273,7 @@ font-weight: bold;
 
 ul.newsticker { /* that's your list */
 position: relative;
-left: 1360px;
+left: 2000px;
 list-style-image: url(resultset_next.png);
 margin: 0;
 padding: 0;
