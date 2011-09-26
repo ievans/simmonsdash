@@ -465,7 +465,6 @@ font-weight: bold;
 }
 
 #forecast {
-<<<<<<< HEAD
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -683,7 +682,7 @@ margin: 0 50px 0 0;
 .next3{
 }
 
-.masterTitle {
+#mastertitle{
 	font-size: 30pt;
 	text-align: center;
 }
