@@ -461,16 +461,16 @@ font-weight: bold;
 #nowlocation {
     color: #eee;
     text-align: right;
-    font-size: 12pt;
+    font-size: small;
 }
 
 #forecast {
+<<<<<<< HEAD
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 50%;
     text-align: center;
-/*    font-size: small;*/
 }
 
 #forecast img {
@@ -479,8 +479,18 @@ font-weight: bold;
 }
 
 #forecast0, #forecast1 {
+    position: relative;
     float: left;
     width: 50%;
+}
+
+#forecast .details {
+    position: absolute;
+    top:35%;
+    width: 50%;
+    right: 3%;
+    padding: 0;
+    margin: auto auto;
 }
 
 .day {
