@@ -52,6 +52,13 @@ body {
 
 }
 
+#scrollerframe {
+    position: absolute;
+    width: 50%;
+    right: 0;
+    height: 100%;
+}
+
 #bottomboxes {
 	position: absolute;
 	bottom: 5%;
@@ -297,13 +304,21 @@ margin: 0 50px 0 0;
   font-style: bold;
 }
 .next1{
+  font-family: 'Helvetica';
   margin-top: 24px;
   font-size: 64px;
+  margin-left: 25px; 
+  margin-right: 25px;
+  margin-bottom: 20px;
+}
+.next1b{
+  font-size: 18px;
 }
 .next2{
-  font-size: 24px;
+  font-size: 20px;
 }
 .next3{
+  
 }
 
 #mastertitle{

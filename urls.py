@@ -14,6 +14,7 @@ patterns('',
          url(r'^news/', 'simmonsdash.views.news', name='news'),
          url(r'^localnews/', 'simmonsdash.views.localnews', name='news'),
          url(r'^light', 'simmonsdash.views.light', name='light'),
+         url(r'^editorial', 'simmonsdash.views.editorial', name='light'),
          url(r'^posters/', 'simmonsdash.views.posters', name='posters'),
          
     # url(r'^simmonsdash/', include('simmonsdash.foo.urls')),

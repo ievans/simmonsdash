@@ -10,5 +10,3 @@ def nextbus(req):
     jsonout = json.dumps(next_times, sort_keys=True, indent=4)
     print jsonout
     return HttpResponse(jsonout, mimetype="application/json")
-
-

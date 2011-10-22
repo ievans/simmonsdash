@@ -3,41 +3,50 @@ architecture of the dormbase system
 --------------------------------------------------------------------------------
 Directory System
 
-  model Resident
-  	roomID -> FK to Room
+    model User
+	roomID -> FK to Room
 	firstname
 	lastname
-	mit username (may be null if not MIT student)
-	other email
+	athena (Athena username may be null if not MIT student)
+	altemail (for non-MIT students)
 	url
 	about
 	bool active
-	bool livesInSimmons
+	bool livesInDorm
 	
- model Room
-  	room number
+    model Room
+	room number
 	room meta-information-for-finding (Tower, Entry, etc)
 	GRT section
-	phone	
+	phone
 	
-
- search by any of these fields
+search by any of these fields
 
 - authentication system - kerberos + non-kerberos (Shibboleth)
 
-
 --------------------------------------------------------------------------------
-Governance
+Governance - handled through ACLs (with a special prefix)
 
-  model Government
-  	position title
-	position email
-	resident -> FK Resident
+    model Legislation
+	status (proposed, tabled, fullforum, accepted, rejected)
+	title
+	summary
+	fulltext
+	proposeddate
+	author -> FK to User
+	funding
+
+    model Meeting
+    	proposals # FKs to list of legislation IDs considered
 
 --------------------------------------------------------------------------------
 Mailing Lists  
 
-	hmmmmm
+	stores a (default) prefix for the mailing list names
+	stores default manager (moira or mailman)
+	for each ACL:
+	    add the prefix (default yes)
+	    synch to mailman / moira?
 
 --------------------------------------------------------------------------------
 Packages
@@ -46,7 +55,7 @@ Packages
 Guest Lists
       
     model GuestList
-    	  ownerID -> FK to Resident
+	  ownerID -> FK to User
 	  name
 
 --------------------------------------------------------------------------------
@@ -61,8 +70,11 @@ ACLs
     model Group
 	  bool auto # true if user was added to group automatically
 	  mailingList
-	  owner
+	  owner -> FK to GroupID or UserID
 
     model GroupMembers
-    	  memberID -> ResidentID
+	  memberID -> FK UserID
 	  isAdmin
+	  position -> string, used for government positions. can be null
+
+    ability to sync ACLs to Moira or Mailman

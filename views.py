@@ -13,7 +13,6 @@ baseUrl = 'http://google.com'
 def home(request):
     return render_to_response('index.html', None)
 
-
 def light(request):
     return render_to_response('light.html', {})
 
@@ -55,6 +54,9 @@ def posters(request):
 
 def news(request):
     return extractCalendarEvents('http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&output=rss')
+
+def editorial(request):
+    return render_to_response('scroller.html', None)
 
 def extractCalendarEvents(url):
     d2 = feedparser.parse(url)
