@@ -76,3 +76,9 @@ def weather(request):
     jsonout = json.dumps(result, sort_keys=True, indent=4)
     return HttpResponse(jsonout, mimetype="application/json")
 
+def editorialList(request):
+    import os
+    files = os.listdir(os.path.join(os.getcwd(), 'media', 'editorials'))
+    files = ['/media/editorials/' + x for x in files]
+    jsonout = json.dumps(files, sort_keys=True, indent=4)
+    return HttpResponse(jsonout, mimetype="application/json")

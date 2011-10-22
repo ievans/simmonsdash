@@ -1,6 +1,23 @@
 // when the DOM is ready...
 $(document).ready(function () {
 
+    var max = 0;
+
+    // populate the images
+    $.ajax({
+	url: "/editoriallist",
+	async: false,
+	success: function(editorial_json){
+	    $("#navigationHeader").html('');
+	    $("#scrollContainerThingie").html('');
+	    $.each(editorial_json, function(x, key) {
+		$("#navigationHeader").append('<li><a id="asel' + x + '" href="#sel' + x + '">' + x + '</a></li>');
+		$("#scrollContainerThingie").append('<div class="panel" id="sel' + x + '"><img src="' + key + '"/></div>');
+		max = x;
+	    });
+	}
+    });
+
     var $panels = $('#slider .scrollContainer > div');
     var $container = $('#slider .scrollContainer');
 
@@ -51,7 +68,7 @@ $(document).ready(function () {
     function nextEvent() {
 	$('#asel' + currentID).trigger('click');
 	currentID += 1;
-	currentID = currentID % 7;
+	currentID = currentID % max;
     }
 
     if (window.location.hash) {
@@ -111,6 +128,8 @@ $(document).ready(function () {
     // the positioning is absolutely spot on when the pages loads.
     scrollOptions.duration = 1;
     $.localScroll.hash(scrollOptions);
+
+
 
     setInterval(nextEvent, 4000);
 

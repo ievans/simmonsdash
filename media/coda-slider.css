@@ -3,11 +3,11 @@ body {
     padding: 0; 
     font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 100%;
-    background-color: #000;
+    background-color: black;
 }
 
 #wrapper {
-    width: 760px;
+/*    width: 100px;*/
     margin: 0 auto;
 }
 
@@ -22,14 +22,14 @@ h2 {
 }
 
 #slider {
-    width: 620px;
+    width: 1020px;
     margin: 0 auto;
     position: relative;
 }
 
 .scroll {
-    height: 250px;
-    width: 620px;
+    height: 850px;
+    width: 1020px;
     overflow: auto;
     overflow-x: hidden;
     position: relative;
@@ -38,13 +38,13 @@ h2 {
 }
 
 .scrollContainer div.panel {
-    padding: 20px;
-    height: 210px;
-    width: 580px;
+    padding: 0px;
+    height: 810px;
+    width: 1020px;
 }
 
 #shade {
-    background: #EDEDEC url(images/shade.jpg) no-repeat 0 0;
+    background-color: black;
     height: 50px;
 }
 
@@ -53,6 +53,7 @@ ul.navigation {
     margin: 0;
     padding: 0;
     padding-bottom: 9px;
+    display: none;
 }
 
 ul.navigation li {
