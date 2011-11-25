@@ -118,9 +118,11 @@ function loadNextbus() {
 	url: "/nextbus",
 	success: function(nextbus_json){
 	    $("#nextbus").html("");
-	    for (var key in nextbus_json) {
-		$("#nextbus").append("<li>" + nextbus_json[key] + "</li>");
-	    }
+	    $("#nextbus1time").html(nextbus_json[1]);
+	    $("#nextbus1").html(nextbus_json[0]);
+	    $("#nextbus2").html(nextbus_json[2]);
+	    $("#nextbus3").html(nextbus_json[3]);
+
 	}
     });
 }
