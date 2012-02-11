@@ -78,3 +78,24 @@ ACLs
 	  position -> string, used for government positions. can be null
 
     ability to sync ACLs to Moira or Mailman
+
+
+APPLICATIONS
+priorities:
+1. users, groups, mailing lists, touchstone (core module)
+. must support authentication via cert, mit account creds, AND non-MIT accounts
+
+apps:
+- desk worker (package management, movie checkin/checkout, guest list)
+- directory app, user profile and user group editor for enduser (link FB, etc)
+- dorm info (show officers, GRTs)
+- movies
+- polls
+- guest list app
+- proposals {lounge, government} & finances
+- rooming, rooming lottery
+- chat app
+- "bon appetit dining menu" app
+
+simmons specific:
+- lounges

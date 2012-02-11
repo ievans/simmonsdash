@@ -53,6 +53,8 @@ def getIcon(condition):
               'Showers': '8',
               'Thunderstorm': '4',
               'Chance of Showers': '8',
+              'Light snow': '15',
+              'Snow' : '15',
               'Chance of Snow': '15',
               'Chance of Storm': '3',
               'Mostly Sunny': '32',
