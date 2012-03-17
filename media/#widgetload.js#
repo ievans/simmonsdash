@@ -65,7 +65,7 @@ function loadWeather() {
 	    $("#dayaftericon").attr("src", weather_json["dayaftericon"]);
 	},
 	async: true
-    });    
+    });
 }
 
 function loadClock(){

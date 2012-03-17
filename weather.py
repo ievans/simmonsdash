@@ -36,6 +36,11 @@ def getWeather(zipcode, pathPrefix = ''):
     result['tomorrowtitle'] = weather['forecasts'][1]['condition']
     result['tomorrowtemphigh'] = weather['forecasts'][1]['high']  + '&deg;'
     result['tomorrowtemplow'] = weather['forecasts'][1]['low']  + '&deg;'
+
+    result['dayaftericon'] = pathPrefix + getIcon(weather['forecasts'][2]['condition'])
+    result['dayaftertitle'] = weather['forecasts'][2]['condition']
+    result['dayaftertemphigh'] = weather['forecasts'][2]['high']  + '&deg;'
+    result['dayaftertemplow'] = weather['forecasts'][2]['low']  + '&deg;'
     
     return result
 
