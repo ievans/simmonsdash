@@ -13,6 +13,7 @@
 
     <!-- Le styles -->
     <link href="../media/css/bootstrap.css" rel="stylesheet">
+    <link href="../media/css/bootstrap_responsive.css" rel="stylesheet">
     
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="../media/images/favicon.ico">
@@ -20,82 +21,89 @@
     <link rel="apple-touch-icon" sizes="72x72" href="../media/images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="../media/images/apple-touch-icon-114x114.png">
   </head>
-  <body>
-    <div class="container">
-      <div class="content">
-        <div class="row">
-          <div class="span18">
-	    <div class="row">
-	      <div id="box1" class="span4">
-		<p>Test1</p>
-	      </div>
 
-	      <div id="weather" class="span8">
-		<div class="row">
-		  <img src="" id="nowicon" name="nowicon" class="span3"></img>
-		  <div>
+  <body class="container-fluid">
+    <header>Simmons Hall</header>
+    <hr>
+
+    <div class="row-fluid">
+      <div class="span6">
+
+	<div class="row-fluid">
+	  <div id="weather" class="span6">
+	    <h1>Saturday, March 17th, 2012</h1>
+	    <h3>2:45 PM</h3>
+	    <div class="row-fluid">
+	      <ul id="weather" class="thumbnails">
+		<li class="span4">
+		  <div class="thumnail">
+		    <img src="" id="nowicon" name="nowicon" class="span3"></img>
 		    <p id="nowtemp"></p>
 		    <p id="nowtitle"></p>
-		    <p id="nowlocation"></p>
 		  </div>
-		</div>
-
-		<div class="row">
-		  <img src="" class="span2" id="todayicon" name="todayicon"></img>
-		  <div class="span2" id="today">
-		    <p>Today</p>
-		    <p id="todaytitle"></p>
-		    <span id="todaytemphigh"></span> / <span id="todaytemplow"></span>
-		  </div>
-
-		  <img src="" class="span2" id="tomorrowicon" name="tomorrowicon"></img>
-		  <div id="tomorrow">
-		    <p>Tomorrow</p>
-		    <p id="tomorrowtitle"></p>
-		    <span id="tomorrowtemphigh"></span> / <span id="tomorrowtemplow"></span>
-		  <div>
-		</div>
-	      </div>
+		</li>
+	      </ul>
 	    </div>
-	      </div>
+	    <div  class="row-fluid">
+	      <ul class="thumbnails">
+		<li class="span2">
+		  <div class="thumbnail">
+		    <h3>Saturday<h3>
+			<img src="" id="todayicon" name="todayicon" class='pull-right'></img>
+			<span id="todaytemphigh"></span> / <span id="todaytemplow"></span>
+		</div>
+		</li>
+		<li class="span2">
+		  <h3>Sunday<h3>
+		      <div class="thumbnail">
+			<img src="" id="tomorrowicon" name="tomorrowicon"></img>
+			<span id="tomorrowtemphigh"></span> / <span id="tomorrowtemplow"></span>
+		      </div>
+		</li>
+	      </ul>
 	    </div>
+	  </div>
 
-	      <div class="row">
-	      <div id="box3" class="span17">
-		<p>Test3</p>
-	      </div>
-	      </div>
-	      <div class="row">
-	      <div id="box4" class="span17">
-		<p>Test4</p>
+	  <div id="shuttle" class="span6">
+	    <h1>Shuttle</h1>
+	    <div class="next1Time" id="nextbus1">
+	      N/A
+	    </div>
+	    <div class="next1b" id="nextbus1time">
+	      N/A
+	    </div>
+	    <div class="next2" id="nextbus2">
+	      N/A
+	    </div>
+	    <div class="next2" id="nextbus3">
+	      N/A
+	    </div>
+	  </div>
 	</div>
+
+	<hr>
+
+	<div class="row-fluid">
+	  <div id="calendar" class="span12">
+	    <h1>Calendar</h1>
+	  </div>
+	</div>
+      
       </div>
-          </div>
-          <div id="slideshow" class="span12">
-            <h3>Slideshow</h3>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non tortor libero. Suspendisse tempor dui ut enim molestie quis sagittis lorem pellentesque. Suspendisse et malesuada nibh. Nulla eget diam enim, ac dignissim mauris. Proin consectetur congue sem, in suscipit elit pulvinar sed. Quisque lacinia congue fermentum. Vivamus laoreet venenatis mauris, a ullamcorper justo mattis nec.
-
-Nulla sed mauris lectus. Sed nec nisl vitae neque lobortis sodales. Donec quam erat, ullamcorper in accumsan quis, euismod ac odio. Duis odio neque, gravida sed convallis ac, consectetur nec ligula. Praesent mollis vulputate justo, ac tristique velit lobortis ultricies. Integer lorem ipsum, aliquam nec sollicitudin sit amet, tempor quis massa. Praesent malesuada pulvinar massa interdum pellentesque. Curabitur quam arcu, dignissim id vestibulum vitae, tempus eu justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In imperdiet sollicitudin facilisis. Pellentesque sodales felis sed orci egestas volutpat. Aliquam ut ipsum lacus. Donec feugiat vestibulum egestas. Duis laoreet dui sed velit tempus sit amet volutpat nibh condimentum. Suspendisse potenti.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lectus justo, euismod quis elementum vel, cursus eget nunc. Suspendisse lobortis pellentesque dapibus. Phasellus iaculis nunc vel lacus ornare posuere. Nam et orci id turpis tincidunt interdum ac in ligula. Donec dui nisi, porttitor at tincidunt et, condimentum eget nunc. Integer eleifend massa at tortor tristique sed fermentum nisi convallis. Donec volutpat vestibulum mattis. Proin at justo quam, eget porta ipsum. Ut a urna a odio accumsan lacinia. Phasellus convallis tortor non erat semper viverra. Donec molestie dui quis metus sodales a blandit lacus blandit. Praesent consequat venenatis libero, in condimentum risus consectetur commodo.
-
-In blandit varius aliquet. Ut tempor interdum massa in feugiat. Aenean mattis massa viverra tellus varius id tempor risus dictum. Maecenas placerat ullamcorper elit sed molestie. Etiam non tellus nec enim luctus ullamcorper. Vivamus suscipit diam sit amet quam aliquet vitae egestas magna iaculis. Phasellus eleifend lectus eu erat semper blandit. Duis sit amet metus vitae dolor pulvinar molestie. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin porta lobortis tempor. Nullam magna ante, elementum sit amet facilisis non, aliquet sed augue. Praesent placerat tristique sodales. Quisque vehicula nisi in dui adipiscing convallis.
-
-Donec ultricies venenatis tortor ac vestibulum. Nulla in iaculis sapien. Aliquam ipsum eros, aliquet id pellentesque in, venenatis at lacus. Maecenas viverra, ante vitae hendrerit accumsan, justo dolor euismod ante, ac posuere leo arcu suscipit libero. Sed ac elit urna. Nullam vel tempor tellus. Duis rhoncus lectus sit amet mauris varius suscipit. Donec ut neque eros. Nunc ipsum mauris, auctor nec imperdiet quis, sollicitudin at mi. Sed aliquam justo a purus ornare vel volutpat orci ullamcorper. Aenean dapibus lacinia risus nec porttitor. Proin ultricies metus et nisi malesuada euismod.</p>  
-          </div>
-        </div>
+      
+      <div id="poster" class="span6">
+	<p>TESTSTsdlkjsalfkjlfj</p>
       </div>
-    </div> <!-- /container -->
-<div class="bottombar">
-  <div class="fill">
-    <div class="container">
-	  <a class="brand" href="#">Drew Dennison</a>
     </div>
-  </div>
-</div>
-
+    
+    <footer>
+      <div id="rsstickercontainer">
+	<ul id="newsticker"></ul>
+      </div>
+    </footer>
+    
   </body>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
-<script type="text/javascript" src="media/jquery.li-scroller.1.0.js"></script>
-<script type="text/javascript" src="media/widgetload.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+  <script type="text/javascript" src="media/jquery.li-scroller.1.0.js"></script>
+  <script type="text/javascript" src="media/widgetload.js"></script>
 </html>
