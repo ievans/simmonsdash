@@ -108,7 +108,7 @@ function loadNextbus() {
 	success: function(nextbus_json){
 	    $("#nextbus").html('');
 	    for (var key in nextbus_json){
-		$("#nextTime" + key).html('<p>' + nextbus_json[key] + '</p>');
+		$("#nextTime" + key).html('<span>' + nextbus_json[key] + ' <small>mins</span></span>');
 	    }
 	}
     });

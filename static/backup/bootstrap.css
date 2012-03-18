@@ -3510,6 +3510,14 @@ html, body {
   text-align: center;
   color: #ffffff;
 }
+#shuttle {
+  background-color: #001934;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  text-align: center;
+  color: #ffffff;
+}
 .module_title {
   background-color: #000000;
   color: #ffffff;
