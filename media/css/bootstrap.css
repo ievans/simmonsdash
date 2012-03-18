@@ -2461,7 +2461,9 @@ html, body {
   background-color: #ffffff;
 }
 #title {
-  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 600%;
 }
 #weather {
   background-color: #001934;
@@ -2482,7 +2484,7 @@ html, body {
   -webkit-border-top-right-radius: 10px;
   -moz-border-top-right-radius: 10px;
   text-align: center;
-  font-size: 140%;
+  font-size: 180%;
 }
 #time {
   display: block;
