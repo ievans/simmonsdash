@@ -72,7 +72,7 @@ def localnews(request):
     return extractCalendarEvents('https://www.google.com/calendar/feeds/simmons-tech%40mit.edu/public/basic')
 
 def weather(request):
-    result = w.getWeather('02139', 'media/weather/')
+    result = w.getWeather('02139', 'static/img/weather/')
     jsonout = json.dumps(result, sort_keys=True, indent=4)
     return HttpResponse(jsonout, mimetype="application/json")
 
