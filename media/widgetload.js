@@ -17,36 +17,8 @@ function loadEvents2() {
 	url: "/events",
 	success: function(events_json){
 	    $("#eventlist").html('');
-        var prev="";
-        var dow="";
 	    for (var key in events_json) {
-        var na=events_json[key].timestamp.split(' ')
-        if(na[0]!=prev){
-            prev=na[0];
-            if(prev=="Sun"){
-                dow="sunday";
-            }
-            if(prev=="Mon"){
-                dow="monday";
-            }
-            if(prev=="Tue"){
-                dow="tuesday";
-            }
-            if(prev=="Wed"){
-                dow="wednesday";
-            }
-            if(prev=="Thu"){
-                dow="thursday";
-            }
-            if(prev=="Fri"){
-                dow="friday";
-            }
-            if(prev=="Sat"){
-                dow="saturday";
-            }
-		    $("#eventlist").append("<p class='dow'>" + dow + " events</p>");
-        }
-		$("#eventlist").append("<li><time>" +na[1].replace('a', 'am').replace('p', 'pm')+" </time> " +events_json[key].title+ "</li>");
+		$("#eventlist").append("<tr><td><time>" + events_json[key].timestamp + "</time></td><td>" + events_json[key].title + "</td></tr>");
 	    }
 	}
     });
@@ -112,8 +84,7 @@ function loadNews() {
 	success: function(news_json) {
 	    $("#newsticker").html('');
 	    for (var key in news_json) {
-		$("#newsticker").append("<li><span>" + news_json[key].timestamp + '</span><a href="#">'
-					+ news_json[key].title + "</a></li>");
+		$("#newsticker").append("<li><p>" + ' ' + news_json[key].title + '&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp'  +"</p></li>");
 	    }
 	},
 	async: false
@@ -136,12 +107,13 @@ function loadNextbus() {
 	url: "/nextbus",
 	success: function(nextbus_json){
 	    $("#nextbus").html('');
-	    for (var key in nextbus_json) {
-		$("#nextbus").append("<li>" + nextbus_json[key] + "</li>");
+	    for (var key in nextbus_json){
+		$("#nextTime" + key).html('<p>' + nextbus_json[key] + '</p>');
 	    }
 	}
     });
 }
+
 $(document).ready(function() {
     loadCalendar();
     loadEvents();
@@ -155,10 +127,10 @@ $(document).ready(function() {
     setInterval(loadNextbus, 10000);
     setInterval(loadClock, 1000);
 
-$(function(){
-    loadNews();
-    $("ul#newsticker").liScroll({travelocity: 0.05});
-});
+    $(function(){
+	loadNews();
+	$("ul#newsticker").liScroll({travelocity: 0.03});
+    });
 
 });
 
