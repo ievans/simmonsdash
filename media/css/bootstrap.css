@@ -2457,28 +2457,75 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
 }
-
-#poster {
-    background: red;
+html, body {
+  background-color: #ffffff;
 }
-
-img {
-    max-height: 100px;
-    max-width: 100px;
+#title {
+  padding: 20px;
 }
-
-#weather h3 {
-    text-align: center;
-}
-
 #weather {
-    background: red;
+  background-color: #001934;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  text-align: center;
+  color: #ffffff;
 }
-
-#shuttle {
-    background: blue;
+.module_title {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px;
+  top-left-border-radius: 10px;
+  -webkit-border-top-left-radius: 10px;
+  -moz-border-top-left-radius: 10px;
+  top-right-border-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-top-right-radius: 10px;
+  text-align: center;
+  font-size: 140%;
 }
-
-#calendar {
-    background: yellow;
+#time {
+  display: block;
+  margin: 40px;
+  font-size: 400%;
+  font-weight: bold;
+}
+#nowicon {
+  display: block;
+  width: 100%;
+}
+#currentDetails {
+  text-align: left;
+  padding: 20px;
+}
+#nowtemp {
+  display: block;
+  padding: 10%;
+  font-size: 500%;
+  font-weight: bold;
+}
+#nowtemp {
+  display: block;
+  padding: 10%;
+  font-size: 500%;
+  font-weight: bold;
+}
+#nowtitle {
+  display: block;
+  padding: 10%;
+  font-size: 200%;
+}
+.icon {
+  display: block;
+  width: 100%;
+}
+.forecastTemps {
+  padding: 10px;
+  margin-top: 10%;
+}
+.forecastDay {
+  color: #ffffff;
+}
+#forecastTitle {
+  padding: 10px;
 }

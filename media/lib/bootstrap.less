@@ -25,56 +25,108 @@
 @import "tables.less";
 @import "patterns.less";
 
+// LESS functions
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+.rounded-top-corners (@radius: 5px) {
+   top-left-border-radius: @radius;
+  -webkit-border-top-left-radius: @radius;
+  -moz-border-top-left-radius: @radius;
+  top-right-border-radius: @radius;
+  -webkit-border-top-right-radius: @radius;
+  -moz-border-top-right-radius: @radius;
+}
+
+
+// Styles
+
+
 html, body {
-     background-color: @black;
+     background-color: @white;
 }
 
-#slideshow {
-	   background-color: @white;
-	   min-height: 970px;
-	   .border-radius;
-	   margin-top: 40px;
-	   padding: 20px;
+
+#title {
+     padding: 20px;
 }
 
-#box1 {
-      display-style: block;
-      background-color: @yellow;
-      min-height: 265px;
-      padding: 20px;
-      margin: 12px;
-      .border-radius(10px);
-}
 #weather {
-      display-style: block;
-      background-color: @blueDark;
-      color: @white;
-      padding: 20px;
-      margin: 12px;
-      text-align: right;
-      .border-radius(10px);
+    background-color: darken(@blueDark, 30%);
+    .rounded-corners(10px);
+    text-align: center;
+    color: @white;
+}
+
+.module_title {
+    background-color: @black;
+    color: @white;
+    padding: 10px;
+    .rounded-top-corners(10px);
+    text-align: center;
+    font-size: 140%;
+}
+
+#time {
+    display: block;
+    margin: 40px;
+    font-size: 400%;
+    font-weight:bold;
+}
+
+#nowicon {
+    display: block;
+    width: 100%;
+}
+
+#currentDetails {
+    text-align: left;
+    padding: 20px;
+}
+
+#nowtemp {
+    display: block;
+    padding: 10%;
+    font-size: 500%;
+    font-weight:bold;
+}
+
+#nowtemp {
+    display: block;
+    padding: 10%;
+    font-size: 500%;
+    font-weight:bold;
+}
+
+#nowtitle {
+    display: block;
+    padding: 10%;
+    font-size: 200%;
+}
+
+.icon {
+    display: block;
+    width: 100%;
+}
+
+.forecastTemps {
+    padding: 10px;
+    margin-top: 10%;
+}
+
+.forecastDay {
+    color: @white;
+}
+
+#forecastTitle {
+    padding: 10px;
 }
 
 
 
-#box3 {
-      display-style: block;
-      background-color: @green;
-      min-height: 300px;
-       padding: 20px;
- margin: 12px;
-     .border-radius(10px);
-}
 
-#box4 {
-      display-style: block;
-      background-color:  @red;
-      min-height: 300px;
-       padding: 20px;
- margin: 12px;
-     .border-radius(10px);
-}
+    
 
-.bottombar {
-	   background-color: @purple;
-}
