@@ -28,7 +28,7 @@ def events(request):
     url = "http://events.mit.edu/rss/index.html?fulltext=&andor=and&categories=24&categories=4&categories=127&categories=2&categories=7&sponsors%3A0=&_rss=Create+RSS+Feed"
     d2 = feedparser.parse(url)
     smallevents = [] # contains only the things we want
-    for event in d2['entries']:
+    for event in d2['entries'][0:5]:
         eventDateTime = datetime.fromtimestamp(mktime(event.updated_parsed))
         smallevents.extend([ { 'title' : event['title'],
                                'timestamp' : formatEventsDate(eventDateTime),
