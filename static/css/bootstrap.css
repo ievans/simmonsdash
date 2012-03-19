@@ -3498,9 +3498,6 @@ html, body {
   background: url('../img/bg.png');
 }
 .module {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
   text-align: center;
   color: #ffffff;
   -webkit-box-shadow: 0 0 30px #000000;
@@ -3522,33 +3519,17 @@ html, body {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   color: #ffffff;
   padding: 10px;
-  top-left-border-radius: 9px;
-  -webkit-border-top-left-radius: 9px;
-  -moz-border-top-left-radius: 9px;
-  top-right-border-radius: 9px;
-  -webkit-border-top-right-radius: 9px;
-  -moz-border-top-right-radius: 9px;
   text-align: center;
   font-size: 180%;
 }
 #title {
   color: rgba(0, 0, 0, 0.5);
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   font-size: 500%;
 }
 #weather {
-  background: rgba(0, 0, 50, 0.5);
-}
-#shuttle {
-  background: rgba(0, 50, 0, 0.5);
-}
-#calendar {
-  color: #999999;
-  background: rgba(50, 0, 0, 0.5);
-}
-#calendar .table td {
-  border: none;
+  background: rgba(0, 0, 50, 0.6);
 }
 #time {
   display: block;
@@ -3577,18 +3558,6 @@ html, body {
   font-size: 500%;
   font-weight: bold;
 }
-#nowtitle {
-  display: block;
-  padding: 10%;
-  font-size: 200%;
-}
-#nextTime0 {
-  display: block;
-  margin: 20px;
-  font-size: 400%;
-  line-height: 120%;
-  font-weight: bold;
-}
 .icon {
   display: block;
   width: 100%;
@@ -3602,6 +3571,54 @@ html, body {
 }
 #forecastTitle {
   padding: 10px;
+}
+#shuttle {
+  background: rgba(0, 50, 0, 0.6);
+}
+#nowtitle {
+  display: block;
+  padding: 10%;
+  font-size: 200%;
+}
+#nextTime0 {
+  display: block;
+  margin: 20px;
+  font-size: 400%;
+  line-height: 120%;
+  font-weight: bold;
+}
+#nextTime1 {
+  display: block;
+  margin: 20px;
+  color: #999999;
+  font-size: 200%;
+  line-height: 120%;
+  font-weight: bold;
+}
+#nextTime2 {
+  display: block;
+  margin: 20px;
+  color: #999999;
+  font-size: 200%;
+  line-height: 120%;
+  font-weight: bold;
+}
+#calendar {
+  color: #999999;
+  background: rgba(50, 0, 0, 0.6);
+}
+#calendar .table td {
+  border: none;
+}
+#poster {
+  background: rgba(0, 0, 0, 0.7);
+}
+.carousel-inner {
+  width: 100%;
+  height: 615px;
+}
+.carousel-inner img {
+  width: 100%;
 }
 .tickercontainer {
   /* the outer div with the black border */
@@ -3641,5 +3658,6 @@ ul.newsticker li {
 }
 ul.newsticker p {
   margin: 0;
+  line-height: 120%;
   font-size: 120%;
 }

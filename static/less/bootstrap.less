@@ -88,6 +88,8 @@
 @topSpacing: 20px;
 @bottomSpacing: @topSpacing;
 
+@posterHeight: 615px;
+
 
 // Styles
 
@@ -97,7 +99,6 @@ html, body {
 }
 
 .module {
-    .border-radius(@corner);
     text-align: center;
     color: @white;
     .box-shadow(0 0 30px @black);
@@ -108,7 +109,6 @@ html, body {
     .gradientBar(@titleBarTop, @titleBarBottom);
     color: @white;
     padding: 10px;
-    .rounded-top-corners(9px);
     text-align: center;
     font-size: 180%;
 }
@@ -116,32 +116,14 @@ html, body {
 
 #title {
     color: rgba(0,0,0,.5);
-    //color: @black;
-     margin-top: @topSpacing;
-     margin-bottom: @bottomSpacing + 20px;
-     font-size: 500%;
+    margin-top: @topSpacing;
+    margin-bottom: @bottomSpacing + 10px;
+    font-size: 500%;
 }
 
 #weather {
-    background: rgba(0,0,50,.5);
-    
+    background: rgba(0,0,50,.6);
 }
-
-#shuttle {
-    background: rgba(0,50,0,.5);
-}
-
-#calendar {
-    color: @grayLight;
-    background: rgba(50,0,0,.5);
-}
-
-#calendar .table td {
-    border: none;
-}
-
-
-
 
 #time {
     display: block;
@@ -175,22 +157,6 @@ html, body {
     font-weight:bold;
 }
 
-#nowtitle {
-    display: block;
-    padding: 10%;
-    font-size: 200%;
-}
-
-#nextTime0 {
-    display: block;
-    margin: @topSpacing;
-    font-size: 400%;
-    line-height: 120%;
-    font-weight:bold;
-}
-
-
-
 .icon {
     display: block;
     width: 100%;
@@ -207,6 +173,64 @@ html, body {
 
 #forecastTitle {
     padding: 10px;
+}
+
+#shuttle {
+    background: rgba(0,50,0,.6);
+}
+
+#nowtitle {
+    display: block;
+    padding: 10%;
+    font-size: 200%;
+}
+
+#nextTime0 {
+    display: block;
+    margin: @topSpacing;
+    font-size: 400%;
+    line-height: 120%;
+    font-weight:bold;
+}
+
+#nextTime1 {
+    display: block;
+    margin: @topSpacing;
+    color: @grayLight;
+    font-size: 200%;
+    line-height: 120%;
+    font-weight:bold;
+}
+
+#nextTime2 {
+    display: block;
+    margin: @topSpacing;
+    color: @grayLight;
+    font-size: 200%;
+    line-height: 120%;
+    font-weight:bold;
+}
+
+#calendar {
+    color: @grayLight;
+    background: rgba(50,0,0,.6);
+}
+
+#calendar .table td {
+    border: none;
+}
+
+#poster {
+    background: rgba(0,0,0,.7);    
+}
+
+.carousel-inner {
+    width: 100%;
+    height: @posterHeight;
+}
+
+.carousel-inner img {
+    width: 100%;
 }
 
 
@@ -234,6 +258,7 @@ ul.newsticker li {
 
 ul.newsticker p {
     margin: 0;
+    line-height: 120%;
     font-size: 120%;
 } 
 
